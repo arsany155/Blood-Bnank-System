@@ -1,0 +1,174 @@
+﻿@model BD_26.Models.Donor
+
+@{
+    ViewBag.Title = "Create_ar";
+    Layout = "~/Views/Shared/User_Layout_ar.cshtml";
+}
+
+<div class="signup">
+<div class="container">
+    <nav class="pt-4" aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-edit">
+            <li class="breadcrumb-item"><a href="index-en.html">الرئيسية</a></li>
+            <li class="breadcrumb-item active" aria-current="page">إنشاء</li>
+        </ol>
+    </nav>
+    @if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Satus))
+    {
+        if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success">
+                <strong>Success!</strong>@ViewBag.Message
+            </div>
+        }
+
+    }
+    else
+    {
+        using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+               
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                   <p>الرقم القومي</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DSsn, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DSsn, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>الأسم الأول</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Fname, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Fname, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>الأسم الأوسط</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Mname, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Mname, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>الأسم الأخير</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Lname, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Lname, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>البريد الألكتروني</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        @Html.ValidationMessage("EmailExist", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>الدولة</p>
+                    <div class="col-md-10">
+                        @Html.Label("country", "مصر")
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>الحي</p>
+                    <div class="col-md-10">
+                        <div class="col-md-10">
+                            @Html.DropDownList("city", new List<SelectListItem>
+                            {
+                                new SelectListItem { Text = "المنتزه اول", Value = "المنتزه اول", Selected=true},
+                                new SelectListItem { Text = "المنتزه ثاني", Value = "المنتزه ثاني"},
+                                new SelectListItem { Text = "غرب", Value = "غرب"},
+                                new SelectListItem { Text = "وسط", Value = "وسط"},
+                                new SelectListItem { Text = "شرق", Value = "شرق"},
+                                new SelectListItem { Text = "جمرك", Value = "جمرك"},
+                                new SelectListItem { Text = "عجمي", Value = "عجمي"},
+                                new SelectListItem { Text = "عامرية", Value = "عامرية"},
+                                new SelectListItem { Text = "عامرية", Value = "عامرية"},
+                                new SelectListItem { Text = "برج العرب", Value = "برج العرب"}}, "Select District")
+                            @Html.ValidationMessageFor(model => model.city, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>النوع</p>
+                    <div class="col-md-10">
+                        @Html.DropDownListFor(m => m.sex,new SelectList(Enum.GetValues(typeof(sex))),"Select Gender")
+                        @Html.ValidationMessageFor(model => model.sex, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>تاريخ الميلاد</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.birthday, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.birthday, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>رقم المحمول</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.phone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>فصيلة الدم</p>
+                    <div class="col-md-10">
+                        @Html.DropDownList("bloodtype", new List<SelectListItem>
+                        {
+                           new SelectListItem { Text = "A-", Value = "A-", Selected=true},
+                           new SelectListItem { Text = "AB-", Value = "AB-"},
+                           new SelectListItem { Text = "O-", Value = "O-"},
+                           new SelectListItem { Text = "B-", Value = "B-"},
+                           new SelectListItem { Text = "A+", Value = "A+"},
+                           new SelectListItem { Text = "AB+", Value = "AB+"},
+                           new SelectListItem { Text = "O+", Value = "O+"},
+                           new SelectListItem { Text = "B+", Value = "B+"}}, "Select Blood type")
+                        @Html.ValidationMessageFor(model => model.bloodtype, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <p>كلمة المرور</p>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="text-center">
+                            <a href="" class="btn btn-primary"><input type="submit" value="انشاء" class="btn btn-default" /></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            if (ViewBag.Message != null)
+            {
+                <div class="alert-success">
+                    <strong>Success!</strong>@ViewBag.Message
+                </div>
+            }
+        }
+    }
+    </div>
+</div>

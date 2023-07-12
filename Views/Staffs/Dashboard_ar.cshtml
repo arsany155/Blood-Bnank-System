@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+<div class="signup">
+    <div class="container">
+        <nav class="pt-4" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-edit">
+                <li class="breadcrumb-item"><a href="index-en.html">الرئيسية</a></li>
+                <li class="breadcrumb-item active" aria-current="page">صفحةالتحكم</li>
+            </ol>
+        </nav>
+        <table class="table">
+            <tr>
+                <td>
+                    <div class="text-center">
+                        <a href="/Donors/Index" class="btn btn-primary"><input type="submit" value="المتبرعين" class="btn btn-default" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/Hospitals/Index" class="btn btn-primary"><input type="submit" value="المستشفيات" class="btn btn-default" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/Patient_Requests/Index" class="btn btn-primary"><input type="submit" value="المرضي" class="btn btn-default" /></a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="text-center">
+                        <a href="/BloodBanks/Index" class="btn btn-primary"><input type="submit" value="بنوك الدم" class="btn btn-default" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/BloodBags/Index" class="btn btn-primary"><input type="submit" value="أكياس الدم" class="btn btn-default" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/Staffs/Index" class="btn btn-primary"><input type="submit" value="المسؤلين" class="btn btn-default" /></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr />
+    </div>
+</div>

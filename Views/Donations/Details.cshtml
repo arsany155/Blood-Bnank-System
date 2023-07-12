@@ -1,0 +1,50 @@
+﻿@model BD_26.Models.Donation
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+<div class="signup">
+    <div class="container">
+        <nav class="pt-4" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-edit">
+                <li class="breadcrumb-item"><a href="index-en.html">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="index-en.html">Donations</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Delete</li>
+            </ol>
+        </nav>
+        <div>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.bloodtype)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.bloodtype)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastDonationDate)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastDonationDate)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Donor.Fname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Donor.Fname)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Donation_id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>

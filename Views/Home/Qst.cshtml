@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "Qst";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+<!-- Start Requests -->
+<div class="about about-bg-color">
+    <div class="container">
+        <br><br>
+        <div class="about-box-color">
+            <div class="text-center my-3">
+                <img src="~/assets/images/logo.png" alt="logo">
+                <br><br>
+
+
+
+                <h4>Please answer the following questions: </h4>
+                <br><br>
+
+                <div class="body">
+
+                    <form name="quiz" onsubmit="return onSubmit()">
+
+                        <div class="question">
+                            <h4>Do you suffer from any health problem?</h4>
+                            <input type="radio" name="q3" value="yes">yes<br>
+                            <input type="radio" name="q3" value="no">no<br>
+                        </div>
+
+
+                        <div class="question">
+                            <h4>Have you had surgery, plastic surgery, or fractures?</h4>
+                            <input type="radio" name="q7" value="yes">yes<br>
+                            <input type="radio" name="q7" value="no">no<br>
+                        </div>
+
+
+                        <div class="question">
+                            <h4>Does a family member have or have had contact with a patient with hepatitis C?</h4>
+                            <input type="radio" name="q8" value="yes">yes<br>
+                            <input type="radio" name="q8" value="no">no<br>
+                        </div>
+
+
+
+                        <div class="question">
+                            <h4>Are you 16 – 65 years old?</h4>
+                            <input type="radio" name="q13" value="yes">yes<br>
+                            <input type="radio" name="q13" value="no">no<br>
+                        </div>
+
+
+
+                        <div class="question">
+                            <h4>Have you had a blood or blood product  since 1st January 1980?</h4>
+                            <input type="radio" name="q15" value="yes">yes<br>
+                            <input type="radio" name="q15" value="no">no<br>
+                        </div>
+
+
+
+                        <div class="question">
+                            <h4>Have you received  since 1st January 1980?</h4>
+                            <input type="radio" name="q16" value="yes">yes<br>
+                            <input type="radio" name="q16" value="no">no<br>
+                        </div>
+
+
+
+                        <div class="question">
+                            <h4>Have you ever had a other than basal cell carcinoma or cervical carcinoma insitu (CIN)?</h4>
+                            <input type="radio" name="q17" value="yes">yes<br>
+                            <input type="radio" name="q17" value="no">no<br>
+                        </div>
+                        <button onclick="location.href='~/Donors/Create'" type="submit">continue</button>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- End Requests -->
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script> -->
+<script src="https://cdn.rtlcss.com/bootstrap/v4.2.1/js/bootstrap.min.js"
+        integrity="sha384-a9xOd0rz8w0J8zqj1qJic7GPFfyMfoiuDjC9rqXlVOcGO/dmRqzMn34gZYDTel8k"
+        crossorigin="anonymous"></script>
+<script src="./assets/plugins/OwlCarousel/owl.carousel.min.js"></script>
+<script src="https://kit.fontawesome.com/e9c094e37f.js" crossorigin="anonymous"></script>
+<script src="./assets/js/main.js"></script>
+<script src="./assets/js/script.js"></script>
+
+<script>
+    function onSubmit() {
+        var score = 0;
+        var score1 = 0;
+        var numofQuestions = 5;
+        var ansArr = ['no', 'no', 'no', 'no', 'yes', 'no', 'no', 'no', 'no']
+
+
+        var q1 = document.forms['quiz']['q3'].value;
+
+        var q2 = document.forms['quiz']['q7'].value;
+        var q3 = document.forms['quiz']['q8'].value;
+        var q4 = document.forms['quiz']['q11'].value;
+
+        var q5 = document.forms['quiz']['q13'].value;
+
+        var q6 = document.forms['quiz']['q15'].value;
+        var q7 = document.forms['quiz']['q16'].value;
+        var q8 = document.forms['quiz']['q17'].value;
+        var q9 = document.forms['quiz']['q18'].value;
+
+        for (var i = 1; i <= numofQuestions; i++) {
+            if (eval('q' + i) == '') {
+                score = 1;
+            }
+        }
+        if (score == 1) {
+            alert('you missed question');
+        }
+        for (var i = 1; i <= numofQuestions; i++) {
+            if (eval('q' + i) != ansArr[i - 1]) {
+                score1 = 1;
+            }
+        }
+        if (score1 == 1) {
+            alert('you can not donat');
+        }
+
+    }
+</script>
+

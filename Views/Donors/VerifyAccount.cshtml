@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "VerifyAccount";
+    Layout = "~/Views/Shared/User_Layout.cshtml";
+}
+
+<div class="signup">
+<div class="container">
+<nav class="pt-4" aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-edit">
+        <li class="breadcrumb-item"><a href="index-en.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="index-en.html">Log In</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Verify Account</li>
+    </ol>
+</nav>
+@if (ViewBag.Status != null && Convert.ToBoolean(ViewBag.Status))
+{ 
+   <div class="alert alert-success">
+       <strong>Success!</strong> your account has been activated successfully.
+   </div>
+}
+else
+{
+<div class="alert alert-danger">
+    <strong>Error!</strong> @ViewBag.Message
+</div>
+}
+</div>
+</div>

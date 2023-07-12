@@ -1,0 +1,74 @@
+﻿@model IEnumerable<BD_26.Models.Hospital>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Hospital_Layout.cshtml";
+}
+
+<nav class="pt-4" aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-edit">
+        <li class="breadcrumb-item"><a href="index-en.html">Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Hospitals</li>
+    </ol>
+</nav>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Hospital Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Hospital Address", "Index", new { sortOrder = ViewBag.NameSortParm1 })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hospital_phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hospital_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hospital_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hospital_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hospital_phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hospital_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Hospital_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Hospital_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Hospital_id })
+            </td>
+        </tr>
+    }
+
+</table>

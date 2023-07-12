@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "SendEmail";
+    Layout = "~/Views/Shared/Staff_Layout.cshtml";
+}
+<div class="signup">
+    <div class="container">
+        <nav class="pt-4" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-edit">
+                <li class="breadcrumb-item"><a href="index-en.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Send Email</li>
+            </ol>
+        </nav>
+        <h2> Welcome to Our WebService</h2>
+
+        <div class="login-box">
+            <div class="text-center my-3">
+                <img src="~/assets/images/logo.png" alt="logo">
+            </div>
+            <form method="post" action="SendEmail" class="login-form">
+                <div class="form-group">
+                    <span class="form-control-static">
+                        Receiver:
+                    </span>
+                    <input type="text" class="form-control" placeholder="Email" name="receiver">
+                </div>
+                <div class="form-group">
+                    <span class="form-control-static">
+                        Subject:
+                    </span>
+                    <input type="text" class="form-control" placeholder="Subject" name="subject">
+                </div>
+                <div class="form-group">
+                    <span class="form-control-static">
+                        Message:
+                    </span>
+                    <input type="text" class="form-control" placeholder="Body" name="message">
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <div class="text-center">
+                            <a href="" class="btn btn-primary"><input type="submit" value="Send" class="btn btn-default" /></a>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            @if (ViewBag.Error != null)
+            {
+                <h2> @ViewBag.Error </h2>
+            }
+
+        </div>
+
+    </div>
+</div>

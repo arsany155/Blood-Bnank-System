@@ -1,0 +1,77 @@
+﻿@model BD_26.Models.Staff
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Staff_Layout.cshtml";
+}
+
+<div class="signup">
+    <div class="container">
+        <nav class="pt-4" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-edit">
+                <li class="breadcrumb-item"><a href="index-en.html">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="index-en.html">Staff</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Details</li>
+            </ol>
+        </nav>
+
+
+        <div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Fname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Fname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Mname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Mname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Lname)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Lname)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.phone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Staff_Ssn }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>

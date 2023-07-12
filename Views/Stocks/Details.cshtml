@@ -1,0 +1,99 @@
+﻿@model BD_26.Models.Stock
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/Staff_Layout.cshtml";
+}
+
+<div class="signup">
+    <div class="container">
+        <nav class="pt-4" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-edit">
+                <li class="breadcrumb-item"><a href="index-en.html">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="index-en.html">Stock</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Details</li>
+            </ol>
+        </nav>
+        <div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Stock_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Stock_name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.A_)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.A_)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.A_1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.A_1)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.B_)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.B_)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.B_1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.B_1)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AB_)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AB_)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.AB_1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.AB_1)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.O_)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.O_)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.A_2)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.A_2)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Stock_Id }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>

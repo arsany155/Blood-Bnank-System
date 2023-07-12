@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Qst_ar";
+    Layout = "~/Views/Shared/User_Layout_ar.cshtml";
+}
+
+<div class="container" style="background: white">
+
+    <br><br>
+    <div class="about-box-color">
+        <div class="text-center my-3">
+            <img src="/assets/images/logo.png" alt="logo">
+            <br><br>
+            <h4>من فصلك أجب عن الأسئلة التالية:</h4>
+            <br><br>
+            <div class="body">
+                <form name="quiz" onsubmit="return onSubmit()">
+
+                    <form name="quiz" onsubmit="return onSubmit()">
+
+                        <div class="question">
+                            <h4>هل تعاني من أي مشكلة صحية؟</h4>
+                            <input type="radio" name="q3" value="yes"><h5>نعم</h5><br>
+                            <input type="radio" name="q3" value="no"><h5>لا</h5><br>
+
+                            <p>هل تتناول أي أدوية (مثل: مضاد حيوي، مضاد فيروسات، مضاد فطريات، ..)</p>
+                        </div>
+
+
+                        <div class="question">
+                            <h4>هل أجري لك عملية جراحية أو عمليات تجميلية أو أصبت بكسور</h4>
+
+                            <input type="radio" name="q7" value="yes"><h5><h5>نعم</h5></h5><br>
+                            <input type="radio" name="q7" value="no"><h5><h5>لا</h5></h5><br>
+
+                        </div>
+                        <div class="question">
+                            <h4>هل أحد أفراد الأسره مصاب أو خالطت مريض بإلتهاب الكبد  الوبائي؟</h4>
+                            <input type="radio" name="q8" value="yes"><h5>نعم</h5><br>
+                            <input type="radio" name="q8" value="no"><h5>لا</h5><br>
+
+
+                            <div class="question">
+                                <h4>هل تعاني حاليا أو عانيت من قبل من:</h4>
+                                <p>
+                                    <input type="radio" name="q18" value="yes"><h5>نعم</h5><br>
+                                    <input type="radio" name="q18" value="no"><h5>لا</h5><br>
+                                    <input type="checkbox">
+                                    <label for="">أمراض القلب</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">مرض السكر (ع<h5>لا</h5>ج بالإنسولين)</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">أمراض الكبد</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">الحمى الروماتيزمية</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">تشنجات عصبية - إماءات متكررة</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">صفراء (خ<h5>لا</h5>ل السنة الماضية)</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">ضغط الدم</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">الأورام السلطانية</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">التيفويد</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">الربو الشعبي</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">الأمراض الجلدية أو التناسلية</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">الدرن</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">أمراض الكلى</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">اارتفاع في درجة الحرارة</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">الم<h5>لا</h5>ريا</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">أمراض الغدة الدرقية</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">البلهارسيا</label> &emsp;
+                                    <input type="checkbox">
+                                    <label for="">أمراض أخرى</label> &emsp;
+                                </p>
+                            </div>
+                            <p>في حالة التبرع  بالصفائح الدموية:</p>
+
+                            <div class="question">
+                                <h4>هل أخذت أسبرين أو مسكنات خ<h5>لا</h5>ل الأسبوع الماضي؟</h4>
+                                <input type="radio" name="q11" value="yes"><h5>نعم</h5><br>
+                                <input type="radio" name="q11" value="no"><h5>لا</h5><br>
+                            </div>
+                            <div class="question">
+
+
+
+                                <div class="question">
+
+                                    <h4>هل عمرك بين 16 و 65 سنة؟?</h4>
+                                    <input type="radio" name="q13" value="yes"><h5>نعم</h5><br>
+                                    <input type="radio" name="q13" value="no"><h5>لا</h5><br>
+                                </div>
+
+
+                                <div class="question">
+                                    <h4>هل أجريت لك عملية <a rel="" href="" target="_blank"> نقل دم </a>أو مشتقات دم منذ 1 كانون الثاني (يناير) 1980؟</h4>
+                                    <input type="radio" name="q15" value="yes"><h5>نعم</h5><br>
+                                    <input type="radio" name="q15" value="no"><h5>لا</h5><br>
+                                </div>
+                                <div class="question">
+                                    <h4>هل تلقيت <a rel="" href="" target="_blank">بويضات أو أجنة متبرع</a> منذ 1 يناير 1980؟</h4>
+                                    <input type="radio" name="q16" value="yes"><h5>نعم</h5><br>
+                                    <input type="radio" name="q16" value="no"><h5>لا</h5><br>
+                                </div>
+
+                                <div class="question">
+                                    <h4>هل أصبت من قبل <a rel="" href="" target="_blank">بسرطان </a> غير سرطان الخ<h5>لا</h5>يا القاعدية لسرطان عنق الرحم الموضعي (CIN)؟</h4>
+                                    <input type="radio" name="q16" value="yes"><h5>نعم</h5><br>
+                                    <input type="radio" name="q16" value="no"><h5>لا</h5><br>
+                                </div>
+                                <div class="text-center">
+                                    <input type="button" value="تقدم" onclick="location.href='@Url.Action("Create_ar", "Donors")'" />
+                                </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,82 @@
+﻿@model BD_26.Models.BloodBank
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/Staff_Layout.cshtml";
+}
+
+<div class="signup">
+    <div class="container">
+        <nav class="pt-4" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-edit">
+                <li class="breadcrumb-item"><a href="index-en.html">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="index-en.html">Hospital</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Delete</li>
+            </ol>
+        </nav>
+        <h3>Are you sure you want to delete this BloodBank?</h3>
+        <div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.bank_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.bank_name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.bank_address)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.bank_address)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.bank_phone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.bank_phone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.bank_email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.bank_email)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Stock.Stock_name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Stock.Stock_name)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>

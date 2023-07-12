@@ -1,0 +1,80 @@
+﻿@model IEnumerable<BD_26.Models.BloodBank>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Staff_Layout.cshtml";
+}
+
+<nav class="pt-4" aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-edit">
+        <li class="breadcrumb-item"><a href="index-en.html">Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">BloodBank</li>
+    </ol>
+</nav>
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Bank Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.ActionLink("Bank Address", "Index", new { sortOrder = ViewBag.NameSortParm1 })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bank_phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bank_email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Stock.Stock_name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.bank_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bank_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bank_phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.bank_email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stock.Stock_name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.bank_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.bank_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.bank_id })
+            </td>
+        </tr>
+    }
+
+</table>

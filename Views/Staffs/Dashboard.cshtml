@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+<div class="signup">
+    <div class="container">
+        <nav class="pt-4" aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-edit">
+                <li class="breadcrumb-item"><a href="index-en.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Admin Dashboard</li>
+            </ol>
+        </nav>
+        <table class="table">
+            <tr>
+                <td>
+                    <div class="text-center">
+                        <a href="/Donors/Index" class="btn btn-primary"><input type="submit" value="Donors" class="btn btn-default" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/Hospitals/Index" class="btn btn-primary"><input type="submit" value="Hospitals" class="btn btn-default" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/Patient_Requests/Index" class="btn btn-primary"><input type="submit" value="Patients" class="btn btn-default" /></a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="text-center">
+                        <a href="/BloodBanks/Index" class="btn btn-primary"><input type="submit" value="Blood banks" class="btn btn-default" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/BloodBags/Index" class="btn btn-primary"><input type="submit" value="Blood bags" class="btn btn-default" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="text-center">
+                        <a href="/Staffs/Index" class="btn btn-primary"><input type="submit" value="Staff" class="btn btn-default" /></a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr />
+    </div>
+</div>   

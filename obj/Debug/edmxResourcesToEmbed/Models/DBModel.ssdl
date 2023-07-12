@@ -1,0 +1,212 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BloodDonation2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BloodBag">
+    <Key>
+      <PropertyRef Name="BloodBag_id" />
+    </Key>
+    <Property Name="BloodBag_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bloodtype" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="DSsn" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="bank_id" Type="int" Nullable="false" />
+    <Property Name="BloodBag_Donation" Type="date" Nullable="false" />
+    <Property Name="BloodBag_Expiration" Type="date" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BloodBank">
+    <Key>
+      <PropertyRef Name="bank_id" />
+    </Key>
+    <Property Name="bank_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="bank_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bank_address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="bank_phone" Type="int" Nullable="false" />
+    <Property Name="bank_email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Stock_id" Type="int" Nullable="false" />
+    <Property Name="Password" Type="char" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Donations">
+    <Key>
+      <PropertyRef Name="Donation_id" />
+    </Key>
+    <Property Name="Donation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Donor_Ssn" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="bloodtype" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="LastDonationDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Donor">
+    <Key>
+      <PropertyRef Name="DSsn" />
+    </Key>
+    <Property Name="DSsn" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="sex" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="birthday" Type="date" Nullable="false" />
+    <Property Name="phone" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="bloodtype" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="char" MaxLength="60" Nullable="false" />
+    <Property Name="IsEmailVerify" Type="bit" Nullable="false" />
+    <Property Name="ActivationCode" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ResetPassword" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Hospital">
+    <Key>
+      <PropertyRef Name="Hospital_id" />
+    </Key>
+    <Property Name="Hospital_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Hospital_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hospital_address" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Hospital_phone" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="Hospital_email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="char" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hospital_Request">
+    <Key>
+      <PropertyRef Name="permission_ID" />
+    </Key>
+    <Property Name="commissary_ssn" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="commissary_name" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Bloodtype" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="Hospital_Id" Type="int" Nullable="false" />
+    <Property Name="permission_path" Type="varchar(max)" Nullable="false" />
+    <Property Name="permission_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Patient_Requests">
+    <Key>
+      <PropertyRef Name="permission_ID" />
+    </Key>
+    <Property Name="Patient_Ssn" Type="varchar" MaxLength="14" Nullable="false" />
+    <Property Name="Patient_name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="bloodtype" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="permission_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="permission_path" Type="varchar(max)" Nullable="false" />
+    <Property Name="Status" Type="varchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="Staff_Ssn" />
+    </Key>
+    <Property Name="Staff_Ssn" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Fname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Lname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="phone" Type="char" MaxLength="11" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="char" MaxLength="60" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="Stock_Id" />
+    </Key>
+    <Property Name="Stock_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Stock_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="A+" Type="int" Nullable="false" />
+    <Property Name="A_" Type="int" Nullable="false" />
+    <Property Name="B+" Type="int" Nullable="false" />
+    <Property Name="B-" Type="int" Nullable="false" />
+    <Property Name="AB+" Type="int" Nullable="false" />
+    <Property Name="AB-" Type="int" Nullable="false" />
+    <Property Name="O+" Type="int" Nullable="false" />
+    <Property Name="A-" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__BloodBag__bank_i__2D27B809">
+    <End Role="BloodBank" Type="Self.BloodBank" Multiplicity="1" />
+    <End Role="BloodBag" Type="Self.BloodBag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BloodBank">
+        <PropertyRef Name="bank_id" />
+      </Principal>
+      <Dependent Role="BloodBag">
+        <PropertyRef Name="bank_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BloodBag__DSsn__44CA3770">
+    <End Role="Donor" Type="Self.Donor" Multiplicity="1" />
+    <End Role="BloodBag" Type="Self.BloodBag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donor">
+        <PropertyRef Name="DSsn" />
+      </Principal>
+      <Dependent Role="BloodBag">
+        <PropertyRef Name="DSsn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BloodBank__Stock__18EBB532">
+    <End Role="Stock" Type="Self.Stock" Multiplicity="1" />
+    <End Role="BloodBank" Type="Self.BloodBank" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stock">
+        <PropertyRef Name="Stock_Id" />
+      </Principal>
+      <Dependent Role="BloodBank">
+        <PropertyRef Name="Stock_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Donations__Donor__19AACF41">
+    <End Role="Donor" Type="Self.Donor" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Donations" Type="Self.Donations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Donor">
+        <PropertyRef Name="DSsn" />
+      </Principal>
+      <Dependent Role="Donations">
+        <PropertyRef Name="Donor_Ssn" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hospital___Hospi__1A9EF37A">
+    <End Role="Hospital" Type="Self.Hospital" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Hospital_Request" Type="Self.Hospital_Request" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hospital">
+        <PropertyRef Name="Hospital_id" />
+      </Principal>
+      <Dependent Role="Hospital_Request">
+        <PropertyRef Name="Hospital_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BloodDonation2ModelStoreContainer">
+    <EntitySet Name="BloodBag" EntityType="Self.BloodBag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BloodBank" EntityType="Self.BloodBank" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donations" EntityType="Self.Donations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Donor" EntityType="Self.Donor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hospital" EntityType="Self.Hospital" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hospital_Request" EntityType="Self.Hospital_Request" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient_Requests" EntityType="Self.Patient_Requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stock" EntityType="Self.Stock" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__BloodBag__bank_i__2D27B809" Association="Self.FK__BloodBag__bank_i__2D27B809">
+      <End Role="BloodBank" EntitySet="BloodBank" />
+      <End Role="BloodBag" EntitySet="BloodBag" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BloodBag__DSsn__44CA3770" Association="Self.FK__BloodBag__DSsn__44CA3770">
+      <End Role="Donor" EntitySet="Donor" />
+      <End Role="BloodBag" EntitySet="BloodBag" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BloodBank__Stock__18EBB532" Association="Self.FK__BloodBank__Stock__18EBB532">
+      <End Role="Stock" EntitySet="Stock" />
+      <End Role="BloodBank" EntitySet="BloodBank" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Donations__Donor__19AACF41" Association="Self.FK__Donations__Donor__19AACF41">
+      <End Role="Donor" EntitySet="Donor" />
+      <End Role="Donations" EntitySet="Donations" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hospital___Hospi__1A9EF37A" Association="Self.FK__Hospital___Hospi__1A9EF37A">
+      <End Role="Hospital" EntitySet="Hospital" />
+      <End Role="Hospital_Request" EntitySet="Hospital_Request" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

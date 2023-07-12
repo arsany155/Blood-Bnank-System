@@ -1,0 +1,78 @@
+﻿@model IEnumerable<BD_26.Models.BloodBag>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Staff_Layout.cshtml";
+}
+
+<nav class="pt-4" aria-label="breadcrumb">
+    <ol class="breadcrumb breadcrumb-edit">
+        <li class="breadcrumb-item"><a href="index-en.html">Dashboard</a></li>
+        <li class="breadcrumb-item active" aria-current="page">BloodBag</li>
+    </ol>
+</nav>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@using (Html.BeginForm())
+{
+
+    <p>
+        Find by name: @Html.TextBox("SearchString")
+        <input type="submit" value="Search" />
+    </p>
+
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.ActionLink("Blood Type", "Index", new { sortOrder = ViewBag.NameSortParm1 })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodBag_Donation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodBag_Expiration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.ActionLink("Hospital Name", "Index", new { sortOrder = ViewBag.NameSortParm })
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Donor.Fname)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.bloodtype)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodBag_Donation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodBag_Expiration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodBank.bank_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Donor.Fname)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BloodBag_id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BloodBag_id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BloodBag_id })
+            </td>
+        </tr>
+    }
+
+</table>

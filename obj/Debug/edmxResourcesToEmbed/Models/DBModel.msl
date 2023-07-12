@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BloodDonation2ModelStoreContainer" CdmEntityContainer="DBModels">
+    <EntitySetMapping Name="BloodBags">
+      <EntityTypeMapping TypeName="BloodDonation2Model.BloodBag">
+        <MappingFragment StoreEntitySet="BloodBag">
+          <ScalarProperty Name="BloodBag_id" ColumnName="BloodBag_id" />
+          <ScalarProperty Name="bloodtype" ColumnName="bloodtype" />
+          <ScalarProperty Name="DSsn" ColumnName="DSsn" />
+          <ScalarProperty Name="bank_id" ColumnName="bank_id" />
+          <ScalarProperty Name="BloodBag_Donation" ColumnName="BloodBag_Donation" />
+          <ScalarProperty Name="BloodBag_Expiration" ColumnName="BloodBag_Expiration" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BloodBanks">
+      <EntityTypeMapping TypeName="BloodDonation2Model.BloodBank">
+        <MappingFragment StoreEntitySet="BloodBank">
+          <ScalarProperty Name="bank_id" ColumnName="bank_id" />
+          <ScalarProperty Name="bank_name" ColumnName="bank_name" />
+          <ScalarProperty Name="bank_address" ColumnName="bank_address" />
+          <ScalarProperty Name="bank_phone" ColumnName="bank_phone" />
+          <ScalarProperty Name="bank_email" ColumnName="bank_email" />
+          <ScalarProperty Name="Stock_id" ColumnName="Stock_id" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donations">
+      <EntityTypeMapping TypeName="BloodDonation2Model.Donation">
+        <MappingFragment StoreEntitySet="Donations">
+          <ScalarProperty Name="Donation_id" ColumnName="Donation_id" />
+          <ScalarProperty Name="Donor_Ssn" ColumnName="Donor_Ssn" />
+          <ScalarProperty Name="bloodtype" ColumnName="bloodtype" />
+          <ScalarProperty Name="LastDonationDate" ColumnName="LastDonationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donors">
+      <EntityTypeMapping TypeName="BloodDonation2Model.Donor">
+        <MappingFragment StoreEntitySet="Donor">
+          <ScalarProperty Name="ResetPassword" ColumnName="ResetPassword" />
+          <ScalarProperty Name="DSsn" ColumnName="DSsn" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Mname" ColumnName="Mname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="birthday" ColumnName="birthday" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="bloodtype" ColumnName="bloodtype" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="IsEmailVerify" ColumnName="IsEmailVerify" />
+          <ScalarProperty Name="ActivationCode" ColumnName="ActivationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospitals">
+      <EntityTypeMapping TypeName="BloodDonation2Model.Hospital">
+        <MappingFragment StoreEntitySet="Hospital">
+          <ScalarProperty Name="Hospital_id" ColumnName="Hospital_id" />
+          <ScalarProperty Name="Hospital_name" ColumnName="Hospital_name" />
+          <ScalarProperty Name="Hospital_address" ColumnName="Hospital_address" />
+          <ScalarProperty Name="Hospital_phone" ColumnName="Hospital_phone" />
+          <ScalarProperty Name="Hospital_email" ColumnName="Hospital_email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hospital_Request">
+      <EntityTypeMapping TypeName="BloodDonation2Model.Hospital_Request">
+        <MappingFragment StoreEntitySet="Hospital_Request">
+          <ScalarProperty Name="commissary_ssn" ColumnName="commissary_ssn" />
+          <ScalarProperty Name="commissary_name" ColumnName="commissary_name" />
+          <ScalarProperty Name="Bloodtype" ColumnName="Bloodtype" />
+          <ScalarProperty Name="Hospital_Id" ColumnName="Hospital_Id" />
+          <ScalarProperty Name="permission_path" ColumnName="permission_path" />
+          <ScalarProperty Name="permission_ID" ColumnName="permission_ID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patient_Requests">
+      <EntityTypeMapping TypeName="BloodDonation2Model.Patient_Requests">
+        <MappingFragment StoreEntitySet="Patient_Requests">
+          <ScalarProperty Name="Patient_Ssn" ColumnName="Patient_Ssn" />
+          <ScalarProperty Name="Patient_name" ColumnName="Patient_name" />
+          <ScalarProperty Name="bloodtype" ColumnName="bloodtype" />
+          <ScalarProperty Name="permission_ID" ColumnName="permission_ID" />
+          <ScalarProperty Name="permission_path" ColumnName="permission_path" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="BloodDonation2Model.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="Staff_Ssn" ColumnName="Staff_Ssn" />
+          <ScalarProperty Name="Fname" ColumnName="Fname" />
+          <ScalarProperty Name="Mname" ColumnName="Mname" />
+          <ScalarProperty Name="Lname" ColumnName="Lname" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stocks">
+      <EntityTypeMapping TypeName="BloodDonation2Model.Stock">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="Stock_Id" ColumnName="Stock_Id" />
+          <ScalarProperty Name="Stock_name" ColumnName="Stock_name" />
+          <ScalarProperty Name="A_" ColumnName="A+" />
+          <ScalarProperty Name="A_1" ColumnName="A_" />
+          <ScalarProperty Name="B_" ColumnName="B+" />
+          <ScalarProperty Name="B_1" ColumnName="B-" />
+          <ScalarProperty Name="AB_" ColumnName="AB+" />
+          <ScalarProperty Name="AB_1" ColumnName="AB-" />
+          <ScalarProperty Name="O_" ColumnName="O+" />
+          <ScalarProperty Name="A_2" ColumnName="A-" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
